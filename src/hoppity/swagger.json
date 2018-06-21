@@ -1,0 +1,80 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "The purpose of this application is to provide\nHoppity Hop manipulation REST API",
+    "title": "Hoppity Hop manipulation REST API",
+    "version": "0.0.1"
+  },
+  "basePath": "/",
+  "paths": {
+    "/hoppity": {
+      "post": {
+        "description": "Returns Hoppity Hop status.",
+        "consumes": [
+          "application/json"
+        ],
+        "tags": [
+          "service"
+        ],
+        "summary": "Generates Hoppity Hop record.",
+        "operationId": "hoppity",
+        "parameters": [
+          {
+            "description": "sequence ID",
+            "name": "SequenceId",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SequenceId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/status"
+          },
+          "500": {
+            "$ref": "#/responses/status"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SequenceId": {
+      "description": "Represents JSON request body coming into hoppity-restapi",
+      "type": "object",
+      "properties": {
+        "sequence_id": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "SequenceId"
+        }
+      },
+      "x-go-package": "hoppity/models"
+    }
+  },
+  "responses": {
+    "status": {
+      "description": "Represents JSON status object returned by Rest Service",
+      "headers": {
+        "status": {
+          "type": "string"
+        },
+        "status_message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
