@@ -1,6 +1,7 @@
 # Runs on Windows as well using mingw32-make.exe installed with msys64
 
 export GOPATH:=$(abspath $(dir $(lastword $(MAKEFILE_LIST)))/../..)
+export PATH := $(PATH):$(GOPATH)/bin
 
 APP?=app
 RELEASE?=1.0.0
