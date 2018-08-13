@@ -1,3 +1,4 @@
+# https://www.cloudbees.com/blog/building-minimal-docker-containers-go-applications
 FROM  golang:1.10 as build-env
 
 
