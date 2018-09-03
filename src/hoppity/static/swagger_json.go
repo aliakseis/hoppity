@@ -22,6 +22,24 @@ const SwaggerJson = `
   },
   "basePath": "/",
   "paths": {
+    "/health-check": {
+      "get": {
+        "description": "Returns 200 (OK) if health check succeeds, otherwise Internal Server Error (500) will be returned.",
+        "tags": [
+          "utility"
+        ],
+        "summary": "Performs application health check.",
+        "operationId": "HealthCheckHandler",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/status"
+          },
+          "500": {
+            "$ref": "#/responses/status"
+          }
+        }
+      }
+    },
     "/hoppity": {
       "post": {
         "description": "Returns Hoppity Hop status.",

@@ -53,6 +53,18 @@ func routes() Routes {
 			accessControl(getHandler(PostOptionsHandler)),
 		},
 		Route{
+			"health-check",
+			"GET",
+			"/health-check",
+			accessControl(getHandler(HealthCheckHandler)),
+		},
+		Route{
+			"healthcheck",
+			"GET",
+			"/healthcheck",
+			accessControl(getHandler(HealthCheckHandler)),
+		},
+		Route{
 			"api-docs",
 			"GET",
 			"/api-docs",
